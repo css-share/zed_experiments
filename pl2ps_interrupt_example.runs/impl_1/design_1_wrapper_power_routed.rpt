@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Tue Dec 11 01:58:57 2018
+| Date             : Fri Dec 14 23:56:35 2018
 | Host             : AsusP8 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -38,7 +38,7 @@ Table of Contents
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 65.6         |
 | Junction Temperature (C) | 44.4         |
-| Confidence Level         | Medium       |
+| Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -59,8 +59,8 @@ Table of Contents
 |   CARRY4                |    <0.001 |        6 |     13300 |            0.05 |
 |   LUT as Shift Register |    <0.001 |       60 |     17400 |            0.34 |
 |   Others                |     0.000 |      186 |       --- |             --- |
-| Signals                 |     0.002 |      983 |       --- |             --- |
-| I/O                     |    <0.001 |        1 |       200 |            0.50 |
+| Signals                 |     0.002 |      982 |       --- |             --- |
+| I/O                     |    <0.001 |        2 |       200 |            1.00 |
 | PS7                     |     1.529 |        1 |       --- |             --- |
 | Static Power            |     0.144 |          |           |                 |
 | Total                   |     1.679 |          |           |                 |
@@ -99,17 +99,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
-+-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                               |                                                                                                            |
-| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
-| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
-| Device models               | High       | Device models are Production                   |                                                                                                            |
-|                             |            |                                                |                                                                                                            |
-| Overall confidence level    | Medium     |                                                |                                                                                                            |
-+-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -161,12 +161,12 @@ Table of Contents
 |         auto_pc                                       |     0.004 |
 |           inst                                        |     0.004 |
 |             gen_axilite.gen_b2s_conv.axilite_b2s      |     0.004 |
-|               RD.ar_channel_0                         |    <0.001 |
+|               RD.ar_channel_0                         |     0.001 |
 |                 ar_cmd_fsm_0                          |    <0.001 |
 |                 cmd_translator_0                      |    <0.001 |
 |                   incr_cmd_0                          |    <0.001 |
 |                   wrap_cmd_0                          |    <0.001 |
-|               RD.r_channel_0                          |    <0.001 |
+|               RD.r_channel_0                          |     0.001 |
 |                 rd_data_fifo_0                        |    <0.001 |
 |                 transaction_fifo_0                    |    <0.001 |
 |               SI_REG                                  |     0.001 |

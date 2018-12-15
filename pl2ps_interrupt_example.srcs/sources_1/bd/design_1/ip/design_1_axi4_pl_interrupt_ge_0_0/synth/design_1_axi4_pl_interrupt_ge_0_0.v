@@ -48,16 +48,18 @@
 
 
 // IP VLNV: xilinx.com:user:axi4_pl_interrupt_generator:1.0
-// IP Revision: 3
+// IP Revision: 4
 
 (* X_CORE_INFO = "axi4_pl_interrupt_generator_v1_0,Vivado 2018.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_axi4_pl_interrupt_ge_0_0,axi4_pl_interrupt_generator_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_axi4_pl_interrupt_ge_0_0,axi4_pl_interrupt_generator_v1_0,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi4_pl_interrupt_generator,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "design_1_axi4_pl_interrupt_ge_0_0,axi4_pl_interrupt_generator_v1_0,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi4_pl_interrupt_generator,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_axi4_pl_interrupt_ge_0_0 (
   interrupt_0,
   interrupt_1,
+  interrupt_2,
   LED_0,
+  SW_7,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -83,7 +85,9 @@ module design_1_axi4_pl_interrupt_ge_0_0 (
 
 output wire interrupt_0;
 output wire interrupt_1;
+output wire interrupt_2;
 output wire LED_0;
+input wire SW_7;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [3 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -137,7 +141,9 @@ input wire s00_axi_aresetn;
   ) inst (
     .interrupt_0(interrupt_0),
     .interrupt_1(interrupt_1),
+    .interrupt_2(interrupt_2),
     .LED_0(LED_0),
+    .SW_7(SW_7),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

@@ -7,6 +7,7 @@
 
 #define INTC_INTERRUPT_ID_0 61 // IRQ_F2P[0:0]
 #define INTC_INTERRUPT_ID_1 62 // IRQ_F2P[1:1]
+#define INTC_INTERRUPT_ID_2 63 // IRQ_F2P[2:2]
 
 // instance of interrupt controller
 static XScuGic intc;
@@ -14,10 +15,12 @@ static XScuGic intc;
 // address of AXI PL interrupt generator
 Xuint32* baseaddr_p = (Xuint32*) XPAR_AXI4_PL_INTERRUPT_GE_0_S00_AXI_BASEADDR;
 
+int flag;
 int setup_interrupt_system();
 
 void isr0 (void *intc_inst_ptr);
 void isr1 (void *intc_inst_ptr);
+void isr2 (void *intc_inst_ptr);
 void nops(unsigned int num);
 
 int main() {
@@ -27,6 +30,8 @@ int main() {
     // set interrupt_0/1 of AXI PL interrupt generator to 0
     *(baseaddr_p+0) = 0x00000000;
     *(baseaddr_p+1) = 0x00000000;
+    *(baseaddr_p+2) = 0x00000000;
+    *(baseaddr_p+3) = 0x00000000;
 
     xil_printf("Checkpoint 1\n\r");
 
@@ -38,15 +43,19 @@ int main() {
     // read interrupt_0/1 of AXI PL interrupt generator
     xil_printf("slv_reg0: 0x%08x\n\r", *(baseaddr_p+0));
     xil_printf("slv_reg1: 0x%08x\n\r", *(baseaddr_p+1));
+    xil_printf("slv_reg2: 0x%08x\n\r", *(baseaddr_p+2));
+    xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
 
     // set interrupt_0/1 of AXI PL interrupt generator to 0
     *(baseaddr_p+0) = 0x00000000;
     *(baseaddr_p+1) = 0x00000000;
+    *(baseaddr_p+2) = 0x00000000;
 
     xil_printf("Checkpoint 3\n\r");
     // read interrupt_0/1 of AXI PL interrupt generator
     xil_printf("slv_reg0: 0x%08x\n\r", *(baseaddr_p+0));
     xil_printf("slv_reg1: 0x%08x\n\r", *(baseaddr_p+1));
+    xil_printf("slv_reg2: 0x%08x\n\r", *(baseaddr_p+2));
 
     xil_printf("Checkpoint 4\n\r");
     // setup and enable interrupts for IRQ_F2P[1:0]
@@ -74,16 +83,23 @@ int main() {
     *(baseaddr_p+0) = 0x00000001;
 
     xil_printf("Checkpoint 8\n\r");
-    nops(1000);
+    nops(10000);
     // set interrupt_1 of AXI PL interrupt generator to 1
     // (isr1 wont be called since interrupts for IRQ_F2P[1:1] are disabled)
-    *(baseaddr_p+1) = 0x00000001;
+    *(baseaddr_p+1) = 0x00000000;
 
     xil_printf("Checkpoint 9\n\r");
 	nops(1000);
 	// set interrupt_0 of AXI PL interrupt generator to 1 (isr0 will be called)
 	*(baseaddr_p+2) = 0x00000001;
 
+    xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
+
+flag = 1;
+while(flag == 1){
+
+	nops(1000);
+}
     xil_printf("== STOP ==\n\r");
 
     cleanup_platform();
@@ -100,6 +116,15 @@ void isr0 (void *intc_inst_ptr) {
 void isr1 (void *intc_inst_ptr) {
     xil_printf("isr1 called\n\r");
     *(baseaddr_p+1) = 0x00000000;
+}
+
+// interrupt service routine for IRQ_F2P[2:2]
+void isr2 (void *intc_inst_ptr) {
+	flag = 0;
+    xil_printf("isr2 called\n\r");
+    *(baseaddr_p+2) = 0x00000000;
+    *(baseaddr_p+1) = 0x00000000;
+    xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
 }
 
 // sets up the interrupt system and enables interrupts for IRQ_F2P[1:0]
@@ -124,7 +149,7 @@ int setup_interrupt_system() {
 
     // set the priority of IRQ_F2P[0:0] to 0xA0 (highest 0xF8, lowest 0x00) and a trigger for a rising edge 0x3.
     XScuGic_SetPriorityTriggerType(intc_instance_ptr, INTC_INTERRUPT_ID_0, 0xA0, 0x3);
-
+    xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
     // connect the interrupt service routine isr0 to the interrupt controller
     result = XScuGic_Connect(intc_instance_ptr, INTC_INTERRUPT_ID_0, (Xil_ExceptionHandler)isr0, (void *)&intc);
 
@@ -134,6 +159,8 @@ int setup_interrupt_system() {
 
     // enable interrupts for IRQ_F2P[0:0]
     XScuGic_Enable(intc_instance_ptr, INTC_INTERRUPT_ID_0);
+
+
 
     // set the priority of IRQ_F2P[1:1] to 0xA8 (highest 0xF8, lowest 0x00) and a trigger for a rising edge 0x3.
     XScuGic_SetPriorityTriggerType(intc_instance_ptr, INTC_INTERRUPT_ID_1, 0xA8, 0x3);
@@ -147,6 +174,20 @@ int setup_interrupt_system() {
 
     // enable interrupts for IRQ_F2P[1:1]
     XScuGic_Enable(intc_instance_ptr, INTC_INTERRUPT_ID_1);
+
+
+    // set the priority of IRQ_F2P[1:1] to 0xA8 (highest 0xF8, lowest 0x00) and a trigger for a rising edge 0x3.
+    XScuGic_SetPriorityTriggerType(intc_instance_ptr, INTC_INTERRUPT_ID_2, 0xA8, 0x3);
+    // connect the interrupt service routine isr1 to the interrupt controller
+    result = XScuGic_Connect(intc_instance_ptr, INTC_INTERRUPT_ID_2, (Xil_ExceptionHandler)isr2, (void *)&intc);
+
+    if (result != XST_SUCCESS) {
+        return result;
+    }
+    // enable interrupts for IRQ_F2P[2:2]
+    XScuGic_Enable(intc_instance_ptr, INTC_INTERRUPT_ID_2);
+
+
 
     // initialize the exception table and register the interrupt controller handler with the exception table
     Xil_ExceptionInit();

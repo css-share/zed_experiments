@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Tue Dec 11 00:11:33 2018
+-- Date        : Fri Dec 14 15:43:07 2018
 -- Host        : AsusP8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ip/design_1_axi4_pl_interrupt_ge_0_0/design_1_axi4_pl_interrupt_ge_0_0_sim_netlist.vhdl
+--               C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ip/design_1_axi4_pl_interrupt_ge_0_0/design_1_axi4_pl_interrupt_ge_0_0_sim_netlist.vhdl
 -- Design      : design_1_axi4_pl_interrupt_ge_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -2261,7 +2261,9 @@ entity design_1_axi4_pl_interrupt_ge_0_0 is
   port (
     interrupt_0 : out STD_LOGIC;
     interrupt_1 : out STD_LOGIC;
+    interrupt_2 : out STD_LOGIC;
     LED_0 : out STD_LOGIC;
+    SW_7 : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awvalid : in STD_LOGIC;
@@ -2296,6 +2298,7 @@ end design_1_axi4_pl_interrupt_ge_0_0;
 
 architecture STRUCTURE of design_1_axi4_pl_interrupt_ge_0_0 is
   signal \<const0>\ : STD_LOGIC;
+  signal \^sw_7\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -2323,6 +2326,8 @@ architecture STRUCTURE of design_1_axi4_pl_interrupt_ge_0_0 is
   attribute X_INTERFACE_INFO of s00_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WDATA";
   attribute X_INTERFACE_INFO of s00_axi_wstrb : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB";
 begin
+  \^sw_7\ <= SW_7;
+  interrupt_2 <= \^sw_7\;
   s00_axi_bresp(1) <= \<const0>\;
   s00_axi_bresp(0) <= \<const0>\;
   s00_axi_rresp(1) <= \<const0>\;

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Tue Dec 11 00:14:19 2018
+//Date        : Fri Dec 14 15:54:54 2018
 //Host        : AsusP8 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -32,7 +32,8 @@ module design_1
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    LED0);
+    LED0,
+    SW7);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -55,10 +56,13 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.LED0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.LED0, LAYERED_METADATA undef" *) output LED0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SW7 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SW7, LAYERED_METADATA undef" *) input SW7;
 
+  wire SW7;
   wire axi4_pl_interrupt_ge_0_LED_0;
   wire axi4_pl_interrupt_ge_0_interrupt_0;
   wire axi4_pl_interrupt_ge_0_interrupt_1;
+  wire axi4_pl_interrupt_ge_0_interrupt_2;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -141,13 +145,15 @@ module design_1
   wire ps7_0_axi_periph_M00_AXI_WVALID;
   wire [0:0]rst_ps7_0_100M_interconnect_aresetn;
   wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
-  wire [1:0]xlconcat_0_dout;
+  wire [2:0]xlconcat_0_dout;
 
   assign LED0 = axi4_pl_interrupt_ge_0_LED_0;
   design_1_axi4_pl_interrupt_ge_0_0 axi4_pl_interrupt_ge_0
        (.LED_0(axi4_pl_interrupt_ge_0_LED_0),
+        .SW_7(SW7),
         .interrupt_0(axi4_pl_interrupt_ge_0_interrupt_0),
         .interrupt_1(axi4_pl_interrupt_ge_0_interrupt_1),
+        .interrupt_2(axi4_pl_interrupt_ge_0_interrupt_2),
         .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(ps7_0_axi_periph_M00_AXI_ARADDR[3:0]),
         .s00_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),
@@ -309,6 +315,7 @@ module design_1
   design_1_xlconcat_0_0 xlconcat_0
        (.In0(axi4_pl_interrupt_ge_0_interrupt_0),
         .In1(axi4_pl_interrupt_ge_0_interrupt_1),
+        .In2(axi4_pl_interrupt_ge_0_interrupt_2),
         .dout(xlconcat_0_dout));
 endmodule
 

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Tue Dec 11 00:11:33 2018
+// Date        : Fri Dec 14 15:43:07 2018
 // Host        : AsusP8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ip/design_1_axi4_pl_interrupt_ge_0_0/design_1_axi4_pl_interrupt_ge_0_0_sim_netlist.v
+//               C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ip/design_1_axi4_pl_interrupt_ge_0_0/design_1_axi4_pl_interrupt_ge_0_0_sim_netlist.v
 // Design      : design_1_axi4_pl_interrupt_ge_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,7 +17,9 @@
 module design_1_axi4_pl_interrupt_ge_0_0
    (interrupt_0,
     interrupt_1,
+    interrupt_2,
     LED_0,
+    SW_7,
     s00_axi_awaddr,
     s00_axi_awprot,
     s00_axi_awvalid,
@@ -41,7 +43,9 @@ module design_1_axi4_pl_interrupt_ge_0_0
     s00_axi_aresetn);
   output interrupt_0;
   output interrupt_1;
+  output interrupt_2;
   output LED_0;
+  input SW_7;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [3:0]s00_axi_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
@@ -66,6 +70,7 @@ module design_1_axi4_pl_interrupt_ge_0_0
 
   wire \<const0> ;
   wire LED_0;
+  wire SW_7;
   wire interrupt_0;
   wire interrupt_1;
   wire s00_axi_aclk;
@@ -86,6 +91,7 @@ module design_1_axi4_pl_interrupt_ge_0_0
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
 
+  assign interrupt_2 = SW_7;
   assign s00_axi_bresp[1] = \<const0> ;
   assign s00_axi_bresp[0] = \<const0> ;
   assign s00_axi_rresp[1] = \<const0> ;

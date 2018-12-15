@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="design_1_processing_system7_0_0_synth_1" LaunchDir="C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.runs/design_1_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_xlconcat_0_0_synth_1" LaunchDir="C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.runs/design_1_xlconcat_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_axi4_pl_interrupt_ge_0_0_synth_1" LaunchDir="C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.runs/design_1_axi4_pl_interrupt_ge_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="design_1_processing_system7_0_0_synth_1"/>
+		<Parent Id="design_1_xlconcat_0_0_synth_1"/>
+		<Parent Id="design_1_axi4_pl_interrupt_ge_0_0_synth_1"/>
+	</Run>
+</Runs>
+

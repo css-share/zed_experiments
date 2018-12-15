@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:axi4_pl_interrupt_generator:1.0
-// IP Revision: 3
+// IP Revision: 4
 
 `timescale 1ns/1ps
 
@@ -56,7 +56,9 @@
 module design_1_axi4_pl_interrupt_ge_0_0 (
   interrupt_0,
   interrupt_1,
+  interrupt_2,
   LED_0,
+  SW_7,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -82,7 +84,9 @@ module design_1_axi4_pl_interrupt_ge_0_0 (
 
 output wire interrupt_0;
 output wire interrupt_1;
+output wire interrupt_2;
 output wire LED_0;
+input wire SW_7;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [3 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -136,7 +140,9 @@ input wire s00_axi_aresetn;
   ) inst (
     .interrupt_0(interrupt_0),
     .interrupt_1(interrupt_1),
+    .interrupt_2(interrupt_2),
     .LED_0(LED_0),
+    .SW_7(SW_7),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),
