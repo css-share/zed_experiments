@@ -161,6 +161,8 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set LED0 [ create_bd_port -dir O -type data LED0 ]
+  set LED7 [ create_bd_port -dir O -type data LED7 ]
+  set SW6 [ create_bd_port -dir I -type data SW6 ]
   set SW7 [ create_bd_port -dir I -type data SW7 ]
 
   # Create instance: axi4_pl_interrupt_ge_0, and set properties
@@ -585,8 +587,10 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins axi4_pl_interrupt_ge_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
 
   # Create port connections
+  connect_bd_net -net SW6_1 [get_bd_ports SW6] [get_bd_pins axi4_pl_interrupt_ge_0/SW_6]
   connect_bd_net -net SW7 [get_bd_ports SW7] [get_bd_pins axi4_pl_interrupt_ge_0/SW_7]
   connect_bd_net -net axi4_pl_interrupt_ge_0_LED_0 [get_bd_ports LED0] [get_bd_pins axi4_pl_interrupt_ge_0/LED_0]
+  connect_bd_net -net axi4_pl_interrupt_ge_0_LED_7 [get_bd_ports LED7] [get_bd_pins axi4_pl_interrupt_ge_0/LED_7]
   connect_bd_net -net axi4_pl_interrupt_ge_0_interrupt_0 [get_bd_pins axi4_pl_interrupt_ge_0/interrupt_0] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axi4_pl_interrupt_ge_0_interrupt_1 [get_bd_pins axi4_pl_interrupt_ge_0/interrupt_1] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net axi4_pl_interrupt_ge_0_interrupt_2 [get_bd_pins axi4_pl_interrupt_ge_0/interrupt_2] [get_bd_pins xlconcat_0/In2]

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Fri Dec 14 15:54:54 2018
+//Date        : Mon Dec 17 19:35:15 2018
 //Host        : AsusP8 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -32,6 +32,8 @@ module design_1_wrapper
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     LED0,
+    LED7,
+    SW6,
     SW7);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -55,6 +57,8 @@ module design_1_wrapper
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
   output LED0;
+  output LED7;
+  input SW6;
   input SW7;
 
   wire [14:0]DDR_addr;
@@ -79,6 +83,8 @@ module design_1_wrapper
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
   wire LED0;
+  wire LED7;
+  wire SW6;
   wire SW7;
 
   design_1 design_1_i
@@ -104,5 +110,7 @@ module design_1_wrapper
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .LED0(LED0),
+        .LED7(LED7),
+        .SW6(SW6),
         .SW7(SW7));
 endmodule

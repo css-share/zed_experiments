@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Fri Dec 14 15:43:07 2018
+// Date        : Mon Dec 17 19:35:51 2018
 // Host        : AsusP8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ip/design_1_axi4_pl_interrupt_ge_0_0/design_1_axi4_pl_interrupt_ge_0_0_sim_netlist.v
@@ -19,6 +19,8 @@ module design_1_axi4_pl_interrupt_ge_0_0
     interrupt_1,
     interrupt_2,
     LED_0,
+    LED_7,
+    SW_6,
     SW_7,
     s00_axi_awaddr,
     s00_axi_awprot,
@@ -45,6 +47,8 @@ module design_1_axi4_pl_interrupt_ge_0_0
   output interrupt_1;
   output interrupt_2;
   output LED_0;
+  output LED_7;
+  input SW_6;
   input SW_7;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [3:0]s00_axi_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
@@ -64,12 +68,13 @@ module design_1_axi4_pl_interrupt_ge_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RDATA" *) output [31:0]s00_axi_rdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *) input s00_axi_rready;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0" *) input s00_axi_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *) input s00_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0" *) input s00_axi_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW" *) input s00_axi_aresetn;
 
   wire \<const0> ;
   wire LED_0;
+  wire SW_6;
   wire SW_7;
   wire interrupt_0;
   wire interrupt_1;
@@ -91,7 +96,8 @@ module design_1_axi4_pl_interrupt_ge_0_0
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
 
-  assign interrupt_2 = SW_7;
+  assign LED_7 = SW_7;
+  assign interrupt_2 = SW_6;
   assign s00_axi_bresp[1] = \<const0> ;
   assign s00_axi_bresp[0] = \<const0> ;
   assign s00_axi_rresp[1] = \<const0> ;
@@ -100,6 +106,7 @@ module design_1_axi4_pl_interrupt_ge_0_0
        (.G(\<const0> ));
   design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0 inst
        (.LED_0(LED_0),
+        .SW_7(SW_7),
         .S_AXI_ARREADY(s00_axi_arready),
         .S_AXI_AWREADY(s00_axi_awready),
         .S_AXI_WREADY(s00_axi_wready),
@@ -139,6 +146,7 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0
     s00_axi_wdata,
     s00_axi_araddr,
     s00_axi_arvalid,
+    SW_7,
     s00_axi_wstrb,
     s00_axi_aresetn,
     s00_axi_bready,
@@ -159,12 +167,14 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0
   input [31:0]s00_axi_wdata;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
+  input SW_7;
   input [3:0]s00_axi_wstrb;
   input s00_axi_aresetn;
   input s00_axi_bready;
   input s00_axi_rready;
 
   wire LED_0;
+  wire SW_7;
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
   wire S_AXI_WREADY;
@@ -187,6 +197,7 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0
 
   design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AXI axi4_pl_interrupt_generator_v1_0_S00_AXI_inst
        (.LED_0(LED_0),
+        .SW_7(SW_7),
         .S_AXI_ARREADY(S_AXI_ARREADY),
         .S_AXI_AWREADY(S_AXI_AWREADY),
         .S_AXI_WREADY(S_AXI_WREADY),
@@ -226,6 +237,7 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AX
     s00_axi_wdata,
     s00_axi_araddr,
     s00_axi_arvalid,
+    SW_7,
     s00_axi_wstrb,
     s00_axi_aresetn,
     s00_axi_bready,
@@ -246,12 +258,14 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AX
   input [31:0]s00_axi_wdata;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
+  input SW_7;
   input [3:0]s00_axi_wstrb;
   input s00_axi_aresetn;
   input s00_axi_bready;
   input s00_axi_rready;
 
   wire LED_0;
+  wire SW_7;
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
   wire S_AXI_WREADY;
@@ -298,7 +312,7 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AX
   wire \slv_reg2[15]_i_1_n_0 ;
   wire \slv_reg2[23]_i_1_n_0 ;
   wire \slv_reg2[31]_i_1_n_0 ;
-  wire [31:0]slv_reg3;
+  wire [31:1]slv_reg3;
   wire \slv_reg3[15]_i_1_n_0 ;
   wire \slv_reg3[23]_i_1_n_0 ;
   wire \slv_reg3[31]_i_1_n_0 ;
@@ -431,7 +445,7 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AX
     \axi_rdata[0]_i_1 
        (.I0(interrupt_1),
         .I1(interrupt_0),
-        .I2(slv_reg3[0]),
+        .I2(SW_7),
         .I3(axi_araddr[3]),
         .I4(axi_araddr[2]),
         .I5(LED_0),
@@ -1685,12 +1699,6 @@ module design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AX
         .I2(p_0_in[0]),
         .I3(p_0_in[1]),
         .O(\slv_reg3[7]_i_1_n_0 ));
-  FDRE \slv_reg3_reg[0] 
-       (.C(s00_axi_aclk),
-        .CE(\slv_reg3[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[0]),
-        .Q(slv_reg3[0]),
-        .R(\slv_reg0[0]_i_1_n_0 ));
   FDRE \slv_reg3_reg[10] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg3[15]_i_1_n_0 ),

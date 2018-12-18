@@ -26,7 +26,7 @@ void nops(unsigned int num);
 int main() {
     init_platform();
 
-    xil_printf("== START ==\n\r");
+    xil_printf("== START version 2 ==\n\r");
     // set interrupt_0/1 of AXI PL interrupt generator to 0
     *(baseaddr_p+0) = 0x00000000;
     *(baseaddr_p+1) = 0x00000000;
@@ -50,7 +50,7 @@ int main() {
     *(baseaddr_p+0) = 0x00000000;
     *(baseaddr_p+1) = 0x00000000;
     *(baseaddr_p+2) = 0x00000000;
-
+    nops(100000000);
     xil_printf("Checkpoint 3\n\r");
     // read interrupt_0/1 of AXI PL interrupt generator
     xil_printf("slv_reg0: 0x%08x\n\r", *(baseaddr_p+0));
@@ -73,6 +73,7 @@ int main() {
     nops(1000);
     // set interrupt_1 of AXI PL interrupt generator to 1 (isr1 will be called)
     *(baseaddr_p+1) = 0x00000001;
+    xil_printf("Reading slv_reg1: 0x%08x\n\r", *(baseaddr_p+1));
 
     // disable interrupts for IRQ_F2P[1:1]
     XScuGic_Disable(&intc, INTC_INTERRUPT_ID_1);
@@ -92,14 +93,15 @@ int main() {
 	nops(1000);
 	// set interrupt_0 of AXI PL interrupt generator to 1 (isr0 will be called)
 	*(baseaddr_p+2) = 0x00000001;
-
-    xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
+	nops(10000000);
+	*(baseaddr_p+2) = 0x00000000;
+    xil_printf("Before Busy-Wait Loop slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
 
 flag = 1;
 while(flag == 1){
-
-	nops(1000);
+	nops(100);
 }
+xil_printf("After Busy-Wait Loop slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
     xil_printf("== STOP ==\n\r");
 
     cleanup_platform();
@@ -120,11 +122,10 @@ void isr1 (void *intc_inst_ptr) {
 
 // interrupt service routine for IRQ_F2P[2:2]
 void isr2 (void *intc_inst_ptr) {
-	flag = 0;
     xil_printf("isr2 called\n\r");
     *(baseaddr_p+2) = 0x00000000;
-    *(baseaddr_p+1) = 0x00000000;
-    xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
+    xil_printf("read inside isr2:    slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
+    flag = 0;
 }
 
 // sets up the interrupt system and enables interrupts for IRQ_F2P[1:0]

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Fri Dec 14 15:54:54 2018
+//Date        : Mon Dec 17 19:35:15 2018
 //Host        : AsusP8 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -33,6 +33,8 @@ module design_1
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     LED0,
+    LED7,
+    SW6,
     SW7);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
@@ -56,10 +58,14 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.LED0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.LED0, LAYERED_METADATA undef" *) output LED0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.LED7 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.LED7, LAYERED_METADATA undef" *) output LED7;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SW6 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SW6, LAYERED_METADATA undef" *) input SW6;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SW7 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SW7, LAYERED_METADATA undef" *) input SW7;
 
+  wire SW6_1;
   wire SW7;
   wire axi4_pl_interrupt_ge_0_LED_0;
+  wire axi4_pl_interrupt_ge_0_LED_7;
   wire axi4_pl_interrupt_ge_0_interrupt_0;
   wire axi4_pl_interrupt_ge_0_interrupt_1;
   wire axi4_pl_interrupt_ge_0_interrupt_2;
@@ -148,8 +154,12 @@ module design_1
   wire [2:0]xlconcat_0_dout;
 
   assign LED0 = axi4_pl_interrupt_ge_0_LED_0;
+  assign LED7 = axi4_pl_interrupt_ge_0_LED_7;
+  assign SW6_1 = SW6;
   design_1_axi4_pl_interrupt_ge_0_0 axi4_pl_interrupt_ge_0
        (.LED_0(axi4_pl_interrupt_ge_0_LED_0),
+        .LED_7(axi4_pl_interrupt_ge_0_LED_7),
+        .SW_6(SW6_1),
         .SW_7(SW7),
         .interrupt_0(axi4_pl_interrupt_ge_0_interrupt_0),
         .interrupt_1(axi4_pl_interrupt_ge_0_interrupt_1),

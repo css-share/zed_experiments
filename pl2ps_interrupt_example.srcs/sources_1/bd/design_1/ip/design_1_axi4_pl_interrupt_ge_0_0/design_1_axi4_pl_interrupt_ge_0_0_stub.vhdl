@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Fri Dec 14 15:43:07 2018
+-- Date        : Mon Dec 17 19:35:51 2018
 -- Host        : AsusP8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ip/design_1_axi4_pl_interrupt_ge_0_0/design_1_axi4_pl_interrupt_ge_0_0_stub.vhdl
@@ -18,6 +18,8 @@ entity design_1_axi4_pl_interrupt_ge_0_0 is
     interrupt_1 : out STD_LOGIC;
     interrupt_2 : out STD_LOGIC;
     LED_0 : out STD_LOGIC;
+    LED_7 : out STD_LOGIC;
+    SW_6 : in STD_LOGIC;
     SW_7 : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -48,7 +50,7 @@ architecture stub of design_1_axi4_pl_interrupt_ge_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "interrupt_0,interrupt_1,interrupt_2,LED_0,SW_7,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s00_axi_aclk,s00_axi_aresetn";
+attribute black_box_pad_pin of stub : architecture is "interrupt_0,interrupt_1,interrupt_2,LED_0,LED_7,SW_6,SW_7,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s00_axi_aclk,s00_axi_aresetn";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "axi4_pl_interrupt_generator_v1_0,Vivado 2018.2";
 begin

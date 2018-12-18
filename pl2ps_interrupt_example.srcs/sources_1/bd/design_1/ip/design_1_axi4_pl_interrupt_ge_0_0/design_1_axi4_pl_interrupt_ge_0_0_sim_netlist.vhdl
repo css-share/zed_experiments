@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Fri Dec 14 15:43:07 2018
+-- Date        : Mon Dec 17 19:35:51 2018
 -- Host        : AsusP8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ip/design_1_axi4_pl_interrupt_ge_0_0/design_1_axi4_pl_interrupt_ge_0_0_sim_netlist.vhdl
@@ -32,6 +32,7 @@ entity design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AX
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
+    SW_7 : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
@@ -77,7 +78,7 @@ architecture STRUCTURE of design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_ge
   signal \slv_reg2[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg2[23]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg2[31]_i_1_n_0\ : STD_LOGIC;
-  signal slv_reg3 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal slv_reg3 : STD_LOGIC_VECTOR ( 31 downto 1 );
   signal \slv_reg3[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg3[23]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg3[31]_i_1_n_0\ : STD_LOGIC;
@@ -263,7 +264,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \^interrupt_1\,
       I1 => \^interrupt_0\,
-      I2 => slv_reg3(0),
+      I2 => SW_7,
       I3 => axi_araddr(3),
       I4 => axi_araddr(2),
       I5 => \^led_0\,
@@ -1929,14 +1930,6 @@ axi_wready_reg: unisim.vcomponents.FDRE
       I3 => p_0_in(1),
       O => \slv_reg3[7]_i_1_n_0\
     );
-\slv_reg3_reg[0]\: unisim.vcomponents.FDRE
-     port map (
-      C => s00_axi_aclk,
-      CE => \slv_reg3[7]_i_1_n_0\,
-      D => s00_axi_wdata(0),
-      Q => slv_reg3(0),
-      R => \slv_reg0[0]_i_1_n_0\
-    );
 \slv_reg3_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
@@ -2218,6 +2211,7 @@ entity design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0 is
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
+    SW_7 : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
@@ -2232,6 +2226,7 @@ begin
 axi4_pl_interrupt_generator_v1_0_S00_AXI_inst: entity work.design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0_S00_AXI
      port map (
       LED_0 => LED_0,
+      SW_7 => SW_7,
       S_AXI_ARREADY => S_AXI_ARREADY,
       S_AXI_AWREADY => S_AXI_AWREADY,
       S_AXI_WREADY => S_AXI_WREADY,
@@ -2263,6 +2258,8 @@ entity design_1_axi4_pl_interrupt_ge_0_0 is
     interrupt_1 : out STD_LOGIC;
     interrupt_2 : out STD_LOGIC;
     LED_0 : out STD_LOGIC;
+    LED_7 : out STD_LOGIC;
+    SW_6 : in STD_LOGIC;
     SW_7 : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -2298,11 +2295,12 @@ end design_1_axi4_pl_interrupt_ge_0_0;
 
 architecture STRUCTURE of design_1_axi4_pl_interrupt_ge_0_0 is
   signal \<const0>\ : STD_LOGIC;
+  signal \^sw_6\ : STD_LOGIC;
   signal \^sw_7\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of s00_axi_aclk : signal is "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0";
+  attribute X_INTERFACE_PARAMETER of s00_axi_aclk : signal is "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0";
   attribute X_INTERFACE_INFO of s00_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 S00_AXI_RST RST";
   attribute X_INTERFACE_PARAMETER of s00_axi_aresetn : signal is "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of s00_axi_arready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY";
@@ -2312,7 +2310,7 @@ architecture STRUCTURE of design_1_axi4_pl_interrupt_ge_0_0 is
   attribute X_INTERFACE_INFO of s00_axi_bready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI BREADY";
   attribute X_INTERFACE_INFO of s00_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI BVALID";
   attribute X_INTERFACE_INFO of s00_axi_rready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of s00_axi_rready : signal is "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
+  attribute X_INTERFACE_PARAMETER of s00_axi_rready : signal is "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
   attribute X_INTERFACE_INFO of s00_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RVALID";
   attribute X_INTERFACE_INFO of s00_axi_wready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WREADY";
   attribute X_INTERFACE_INFO of s00_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WVALID";
@@ -2326,8 +2324,10 @@ architecture STRUCTURE of design_1_axi4_pl_interrupt_ge_0_0 is
   attribute X_INTERFACE_INFO of s00_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WDATA";
   attribute X_INTERFACE_INFO of s00_axi_wstrb : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB";
 begin
+  LED_7 <= \^sw_7\;
+  \^sw_6\ <= SW_6;
   \^sw_7\ <= SW_7;
-  interrupt_2 <= \^sw_7\;
+  interrupt_2 <= \^sw_6\;
   s00_axi_bresp(1) <= \<const0>\;
   s00_axi_bresp(0) <= \<const0>\;
   s00_axi_rresp(1) <= \<const0>\;
@@ -2339,6 +2339,7 @@ GND: unisim.vcomponents.GND
 inst: entity work.design_1_axi4_pl_interrupt_ge_0_0_axi4_pl_interrupt_generator_v1_0
      port map (
       LED_0 => LED_0,
+      SW_7 => \^sw_7\,
       S_AXI_ARREADY => s00_axi_arready,
       S_AXI_AWREADY => s00_axi_awready,
       S_AXI_WREADY => s00_axi_wready,
