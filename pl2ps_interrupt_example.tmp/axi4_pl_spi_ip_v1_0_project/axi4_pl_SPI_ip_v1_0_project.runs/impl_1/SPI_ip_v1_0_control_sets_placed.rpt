@@ -1,0 +1,170 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Fri Jan 11 16:15:32 2019
+| Host         : AsusP8 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file SPI_ip_v1_0_control_sets_placed.rpt
+| Design       : SPI_ip_v1_0
+| Device       : xc7z020
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |   101 |
+| Unused register locations in slices containing registers |   512 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |           81 |
+|      4 |            4 |
+|      6 |            1 |
+|     10 |            1 |
+|     14 |            1 |
+|    16+ |           13 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             128 |           60 |
+| No           | Yes                   | No                     |              72 |           30 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             264 |           24 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------------------------------------------+-----------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+
+|                                  Clock Signal                                 |                 Enable Signal                 |                              Set/Reset Signal                              | Slice Load Count | Bel Load Count |
++-------------------------------------------------------------------------------+-----------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[11]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[1]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[1]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[11]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[11]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[20]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[20]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[19]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[19]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[14]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[14]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[21]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[21]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[4]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[2]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[2]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[6]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[6]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[9]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[9]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[5]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[5]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[17]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[23]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[23]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[7]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[7]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[8]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[8]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_P                   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_int_0                 |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff2/Q_int_2                 |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[0]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[12]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[20]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[3]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[6]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[18]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[10]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[16]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[8]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[9]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[23]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[7]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[14]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[15]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[17]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[19]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[1]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[21]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[2]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[13]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[5]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[22]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[13]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[12]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[10]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[22]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[16]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[0]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[18]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[15]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[15]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[1]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[11]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[20]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[15]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[19]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[14]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[21]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[24]_0           |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[4]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[2]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[6]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[9]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[5]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[23]_LDC_i_1_n_0 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[7]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[8]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[1]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[3]_LDC_i_1_n_0  |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff1/Q_int_1                 |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff3/Q_int_3                 |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff6/Q_int_6                 |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff5/Q_int_5                 |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff4/Q_int_4                 |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[13]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[13]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[12]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[12]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[10]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[10]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[22]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[22]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[16]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[16]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[0]_LDC_i_1_n_0    |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[0]_C                 |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[18]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[18]_C                |                1 |              2 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[17]_LDC_i_1_n_0   |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[17]_C                |                1 |              2 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/axi_awready0         | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              4 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/axi_arready0         | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              4 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[2]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |              4 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[2]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_P                 |                1 |              4 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/out[2]                           |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[24]_0           |                1 |              6 |
+|  SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff1/FSM_onehot_state_reg[0] |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                2 |             10 |
+|  s00_axi_aclk_IBUF_BUFG                                                       |                                               | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                4 |             14 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg2[7]_i_1_n_0  | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg3[15]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg0[15]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg0[23]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg3[23]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                2 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg3[31]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg2[31]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg0[31]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg2[15]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg2[23]_i_1_n_0 | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg3[7]_i_1_n_0  | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg0[7]_i_1_n_0  | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                1 |             16 |
+|  s00_axi_aclk_IBUF_BUFG                                                       | SPI_ip_v1_0_S00_AXI_inst/slv_reg_rden__0      | SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff0/Q_reg_0               |                9 |             64 |
++-------------------------------------------------------------------------------+-----------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+
+
+

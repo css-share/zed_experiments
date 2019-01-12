@@ -1,0 +1,374 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Jan 11 16:14:30 2019
+# Process ID: 7480
+# Current directory: c:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.tmp/axi4_pl_spi_ip_v1_0_project/axi4_pl_SPI_ip_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log SPI_ip_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_ip_v1_0.tcl
+# Log file: c:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.tmp/axi4_pl_spi_ip_v1_0_project/axi4_pl_SPI_ip_v1_0_project.runs/synth_1/SPI_ip_v1_0.vds
+# Journal file: c:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.tmp/axi4_pl_spi_ip_v1_0_project/axi4_pl_SPI_ip_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source SPI_ip_v1_0.tcl -notrace
+Command: synth_design -top SPI_ip_v1_0 -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15308 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 333.762 ; gain = 100.008
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'SPI_ip_v1_0' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'SPI_ip_v1_0_S00_AXI' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:243]
+INFO: [Synth 8-226] default block is never used [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:384]
+INFO: [Synth 8-6157] synthesizing module 'SPI_Master' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:681]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:463]
+INFO: [Synth 8-6157] synthesizing module 'dff' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:445]
+INFO: [Synth 8-6155] done synthesizing module 'dff' (1#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:445]
+INFO: [Synth 8-6157] synthesizing module 'mux_8_to_1' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:434]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8_to_1' (2#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:434]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (3#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:463]
+INFO: [Synth 8-6157] synthesizing module 'leftShiftRegister25bits' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:520]
+WARNING: [Synth 8-5788] Register r_reg_reg in module leftShiftRegister25bits is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:536]
+INFO: [Synth 8-6155] done synthesizing module 'leftShiftRegister25bits' (4#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:520]
+INFO: [Synth 8-6157] synthesizing module 'downCounter5Bits' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:491]
+INFO: [Synth 8-6155] done synthesizing module 'downCounter5Bits' (5#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:491]
+INFO: [Synth 8-6157] synthesizing module 'SPI_fsm' [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:552]
+	Parameter S0 bound to: 3'b000 
+	Parameter S1 bound to: 3'b001 
+	Parameter S2 bound to: 3'b010 
+	Parameter S3 bound to: 3'b011 
+	Parameter S4 bound to: 3'b100 
+	Parameter S5 bound to: 3'b101 
+	Parameter S6 bound to: 3'b110 
+	Parameter S7 bound to: 3'b111 
+INFO: [Synth 8-6155] done synthesizing module 'SPI_fsm' (6#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:552]
+INFO: [Synth 8-6155] done synthesizing module 'SPI_Master' (7#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:681]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:236]
+INFO: [Synth 8-6155] done synthesizing module 'SPI_ip_v1_0_S00_AXI' (8#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'SPI_ip_v1_0' (9#1) [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0.v:4]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 389.551 ; gain = 155.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 389.551 ; gain = 155.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 389.551 ; gain = 155.797
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'SPI_fsm'
+INFO: [Synth 8-5544] ROM "done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "shift" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "load" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "CS" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SCK" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                            00001 |                              000
+                      S1 |                            00010 |                              001
+                      S2 |                            00100 |                              010
+                      S3 |                            01000 |                              011
+                      S4 |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'SPI_fsm'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 389.551 ; gain = 155.797
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               25 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 14    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     25 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 9     
+	   5 Input      5 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module dff 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module leftShiftRegister25bits 
+Detailed RTL Component Info : 
++---Registers : 
+	               25 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 2     
+Module downCounter5Bits 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 5     
+Module SPI_fsm 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 1     
+Module SPI_ip_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design SPI_ip_v1_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design SPI_ip_v1_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'SPI_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'SPI_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SPI_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'SPI_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'SPI_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SPI_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (SPI_ip_v1_0_S00_AXI_inst/axi_awaddr_reg[1]) is unused and will be removed from module SPI_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (SPI_ip_v1_0_S00_AXI_inst/axi_awaddr_reg[0]) is unused and will be removed from module SPI_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (SPI_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]) is unused and will be removed from module SPI_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (SPI_ip_v1_0_S00_AXI_inst/axi_araddr_reg[1]) is unused and will be removed from module SPI_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (SPI_ip_v1_0_S00_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module SPI_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (SPI_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module SPI_ip_v1_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:504]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v:536]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |     9|
+|3     |LUT2  |    29|
+|4     |LUT3  |    53|
+|5     |LUT4  |    17|
+|6     |LUT5  |     9|
+|7     |LUT6  |    36|
+|8     |MUXF7 |     1|
+|9     |FDCE  |    38|
+|10    |FDPE  |    26|
+|11    |FDRE  |   141|
+|12    |FDSE  |     2|
+|13    |LDC   |    25|
+|14    |IBUF  |    48|
+|15    |OBUF  |    46|
++------+------+------+
+
+Report Instance Areas: 
++------+---------------------------+------------------------+------+
+|      |Instance                   |Module                  |Cells |
++------+---------------------------+------------------------+------+
+|1     |top                        |                        |   481|
+|2     |  SPI_ip_v1_0_S00_AXI_inst |SPI_ip_v1_0_S00_AXI     |   386|
+|3     |    user_SPI_Block         |SPI_Master              |   221|
+|4     |      CLOCKDIV             |clock_divider           |    20|
+|5     |        ff0                |dff                     |     3|
+|6     |        ff1                |dff_0                   |     4|
+|7     |        ff2                |dff_1                   |     2|
+|8     |        ff3                |dff_2                   |     2|
+|9     |        ff4                |dff_3                   |     2|
+|10    |        ff5                |dff_4                   |     3|
+|11    |        ff6                |dff_5                   |     2|
+|12    |        ff7                |dff_6                   |     2|
+|13    |      DWCNTR               |downCounter5Bits        |    19|
+|14    |      FSM                  |SPI_fsm                 |    36|
+|15    |      SR25Bits             |leftShiftRegister25bits |   146|
++------+---------------------------+------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 556.801 ; gain = 323.047
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 74 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 25 instances were transformed.
+  LDC => LDCE: 25 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+43 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 661.246 ; gain = 440.762
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'c:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.tmp/axi4_pl_spi_ip_v1_0_project/axi4_pl_SPI_ip_v1_0_project.runs/synth_1/SPI_ip_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SPI_ip_v1_0_utilization_synth.rpt -pb SPI_ip_v1_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 661.246 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 11 16:14:48 2019...

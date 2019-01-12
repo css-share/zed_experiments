@@ -14,6 +14,7 @@ static XScuGic intc;
 
 // address of AXI PL interrupt generator
 Xuint32* baseaddr_p = (Xuint32*) XPAR_AXI4_PL_INTERRUPT_GE_0_S00_AXI_BASEADDR;
+Xuint32* baseaddr_spi = (Xuint32*) 0x43C10000;
 
 int flag;
 int setup_interrupt_system();
@@ -26,8 +27,9 @@ void nops(unsigned int num);
 int main() {
     init_platform();
 
-    xil_printf("== START version 2 ==\n\r");
+    xil_printf("== START version 8 ==\n\r");
     // set interrupt_0/1 of AXI PL interrupt generator to 0
+
     *(baseaddr_p+0) = 0x00000000;
     *(baseaddr_p+1) = 0x00000000;
     *(baseaddr_p+2) = 0x00000000;
@@ -37,7 +39,7 @@ int main() {
 
     // set interrupt_0/1 of AXI PL interrupt generator to 1
     *(baseaddr_p+0) = 0x00000001;
-    *(baseaddr_p+1) = 0x00000001;
+    *(baseaddr_p+1) = 0x00000002;
 
     xil_printf("Checkpoint 2\n\r");
     // read interrupt_0/1 of AXI PL interrupt generator
@@ -46,17 +48,24 @@ int main() {
     xil_printf("slv_reg2: 0x%08x\n\r", *(baseaddr_p+2));
     xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
 
+    // clear SPI registers
+    *(baseaddr_spi+0) = 0x00000000;
+    *(baseaddr_spi+1) = 0x00000000;
+    *(baseaddr_spi+2) = 0x00000000;
+    *(baseaddr_spi+3) = 0x00000000;
+
     // set interrupt_0/1 of AXI PL interrupt generator to 0
     *(baseaddr_p+0) = 0x00000000;
     *(baseaddr_p+1) = 0x00000000;
     *(baseaddr_p+2) = 0x00000000;
-    nops(100000000);
+
     xil_printf("Checkpoint 3\n\r");
     // read interrupt_0/1 of AXI PL interrupt generator
-    xil_printf("slv_reg0: 0x%08x\n\r", *(baseaddr_p+0));
-    xil_printf("slv_reg1: 0x%08x\n\r", *(baseaddr_p+1));
-    xil_printf("slv_reg2: 0x%08x\n\r", *(baseaddr_p+2));
-
+    xil_printf("SPI slv_reg0: 0x%08x\n\r", *(baseaddr_spi+0));
+    xil_printf("SPI slv_reg1: 0x%08x\n\r", *(baseaddr_spi+1));
+    xil_printf("SPI slv_reg2: 0x%08x\n\r", *(baseaddr_spi+2));
+    xil_printf("SPI slv_reg3: 0x%08x\n\r", *(baseaddr_spi+3));
+/*
     xil_printf("Checkpoint 4\n\r");
     // setup and enable interrupts for IRQ_F2P[1:0]
     int status = setup_interrupt_system();
@@ -97,11 +106,22 @@ int main() {
 	*(baseaddr_p+2) = 0x00000000;
     xil_printf("Before Busy-Wait Loop slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
 
-flag = 1;
-while(flag == 1){
-	nops(100);
-}
-xil_printf("After Busy-Wait Loop slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
+    flag = 1;
+    while(flag == 1){
+    	nops(100);
+    }
+    xil_printf("After Busy-Wait Loop slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
+*/
+
+    xil_printf("== SPI test ==\n\r");
+    *(baseaddr_spi+3) = 0x00000003;		// clock division
+    *(baseaddr_spi+0) = 0x8000F853;		// write operation
+    xil_printf("After SPI reading 3 done: 0x%08x\n\r", *(baseaddr_spi+3));
+    xil_printf("After SPI reading 0 done: 0x%08x\n\r", *(baseaddr_spi+0));
+nops(100000000);
+    *(baseaddr_spi+0) = 0x00000000;		// write operation - null
+    xil_printf("After SPI reading 0 done: 0x%08x\n\r", *(baseaddr_spi+0));
+
     xil_printf("== STOP ==\n\r");
 
     cleanup_platform();
@@ -160,8 +180,6 @@ int setup_interrupt_system() {
 
     // enable interrupts for IRQ_F2P[0:0]
     XScuGic_Enable(intc_instance_ptr, INTC_INTERRUPT_ID_0);
-
-
 
     // set the priority of IRQ_F2P[1:1] to 0xA8 (highest 0xF8, lowest 0x00) and a trigger for a rising edge 0x3.
     XScuGic_SetPriorityTriggerType(intc_instance_ptr, INTC_INTERRUPT_ID_1, 0xA8, 0x3);

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="synth_1" LaunchDir="c:/xilinx/vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.tmp/axi4_pl_spi_ip_v1_0_project/axi4_pl_SPI_ip_v1_0_project.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

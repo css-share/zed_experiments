@@ -30,7 +30,10 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_repo_paths c:/Xilinx/Vivado/projects/ip_repo/axi4_pl_interrupt_generator_1.0 [current_project]
+set_property ip_repo_paths {
+  c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0
+  c:/Xilinx/Vivado/projects/ip_repo/axi4_pl_interrupt_generator_1.0
+} [current_project]
 set_property ip_output_repo c:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib C:/Xilinx/Vivado/projects/pl2ps_interrupt_example/pl2ps_interrupt_example.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v

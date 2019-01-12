@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Fri Jan 11 19:14:32 UTC 2019
+VLNV: xilinx.com:user:SPI_ip:1.0
+SynthRuntime: 30

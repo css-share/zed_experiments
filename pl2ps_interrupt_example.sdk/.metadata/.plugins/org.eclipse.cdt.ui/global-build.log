@@ -1,14 +1,1336 @@
-19:40:46 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+14:17:32 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for `main-build'.
-19:41:05 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+14:17:39 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27032	   2728	  22600	  52360	   cc88	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:19:36 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for `main-build'.
-19:51:44 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+14:19:58 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:21:44 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:21:58 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:24:20 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:24:54 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:26:44 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27096	   2728	  22600	  52424	   ccc8	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:27:21 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:27:28 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:34:54 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:51:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10000) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:52:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10001) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:53:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10002) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:54:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10003) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:117:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10003) = 0x00000003;  // clock division
+     ^~~~~~~~~~~~~
+../src/helloworld.c:118:47: error: invalid type argument of unary '*' (have 'int')
+     xil_printf("check write 3  : 0x%08x\n\r", *(0x43C10003));
+                                               ^~~~~~~~~~~~~
+make: *** [src/helloworld.o] Error 1
+14:34:59 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:51:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10000) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:52:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10001) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:53:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10002) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:54:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10003) = 0x00000000;
+     ^~~~~~~~~~~~~
+../src/helloworld.c:117:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10003) = 0x00000003;  // clock division
+     ^~~~~~~~~~~~~
+../src/helloworld.c:118:47: error: invalid type argument of unary '*' (have 'int')
+     xil_printf("check write 3  : 0x%08x\n\r", *(0x43C10003));
+                                               ^~~~~~~~~~~~~
+make: *** [src/helloworld.o] Error 1
+14:36:37 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:117:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10003) = 0x00000003;  // clock division
+     ^~~~~~~~~~~~~
+../src/helloworld.c:118:47: error: invalid type argument of unary '*' (have 'int')
+     xil_printf("check write 3  : 0x%08x\n\r", *(0x43C10003));
+                                               ^~~~~~~~~~~~~
+make: *** [src/helloworld.o] Error 1
+14:37:35 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:118:5: error: invalid type argument of unary '*' (have 'int')
+     *(0x43C10003) = 0x00000003;  // clock division
+     ^~~~~~~~~~~~~
+../src/helloworld.c:119:47: error: invalid type argument of unary '*' (have 'int')
+     xil_printf("check write 3  : 0x%08x\n\r", *(0x43C10003));
+                                               ^~~~~~~~~~~~~
+make: *** [src/helloworld.o] Error 1
+14:38:02 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27336	   2728	  22600	  52664	   cdb8	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:38:16 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:38:26 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:40:03 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27336	   2728	  22600	  52664	   cdb8	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:40:06 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:40:11 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:47:11 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27464	   2728	  22600	  52792	   ce38	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:47:13 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:47:17 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:48:59 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27464	   2728	  22600	  52792	   ce38	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:49:03 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:49:05 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:49:31 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27464	   2728	  22600	  52792	   ce38	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:49:46 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27464	   2728	  22600	  52792	   ce38	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:50:15 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:53:14 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27052	   2728	  22600	  52380	   cc9c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:53:28 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27052	   2728	  22600	  52380	   cc9c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+14:53:31 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:53:35 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:06:31 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27464	   2728	  22600	  52792	   ce38	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+15:06:34 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:06:37 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:14:20 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27172	   2728	  22600	  52500	   cd14	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+15:14:23 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:14:25 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:15:41 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27108	   2728	  22600	  52436	   ccd4	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+15:15:46 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:15:59 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:17:19 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27108	   2728	  22600	  52436	   ccd4	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+15:17:21 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:17:23 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:18:18 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27244	   2728	  22600	  52572	   cd5c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+15:18:21 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:18:24 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:00:13 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:00:15 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:00:35 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:03:40 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27308	   2728	  22600	  52636	   cd9c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:03:43 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:03:46 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:07:28 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:07:32 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:07:48 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:09:37 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27308	   2728	  22600	  52636	   cd9c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:09:42 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:09:47 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:10:12 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:11:58 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27964	   2728	  22600	  53292	   d02c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:12:00 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:12:01 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:13:08 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:14:07 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27068	   2728	  22600	  52396	   ccac	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:14:23 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27068	   2728	  22600	  52396	   ccac	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:17:13 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27244	   2728	  22600	  52572	   cd5c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:20:55 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:20:59 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:22:39 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:22:47 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:23:20 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:23:41 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:23:48 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:24:20 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:24:31 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:24:42 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:25:10 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27244	   2728	  22600	  52572	   cd5c	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:25:25 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:25:55 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:27:23 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:27:40 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:29:23 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:29:42 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:30:13 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:46:24 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:46:44 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:46:47 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:46:49 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:48:55 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+16:48:57 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:49:04 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:02:49 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:02:56 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:19:55 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:20:34 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:21:29 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:21:42 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:22:22 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+17:22:31 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:22:37 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:23:36 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+17:23:41 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:23:48 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:24:15 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+17:24:19 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:24:28 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:24:45 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:25:27 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:29:04 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+17:29:05 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:29:08 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:30:42 **** Auto Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: axi4_pl_interrupt_generator_test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi4_pl_interrupt_generator_test_bsp/ps7_cortexa9_0/lib -o "axi4_pl_interrupt_generator_test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi4_pl_interrupt_generator_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi4_pl_interrupt_generator_test.elf  |tee "axi4_pl_interrupt_generator_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27184	   2728	  22600	  52512	   cd20	axi4_pl_interrupt_generator_test.elf
+'Finished building: axi4_pl_interrupt_generator_test.elf.size'
+' '
+17:30:45 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:30:54 **** Incremental Build of configuration Debug for project axi4_pl_interrupt_generator_test ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
