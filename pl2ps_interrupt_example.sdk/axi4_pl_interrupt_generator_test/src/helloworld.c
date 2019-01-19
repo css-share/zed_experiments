@@ -24,7 +24,98 @@ void isr1 (void *intc_inst_ptr);
 void isr2 (void *intc_inst_ptr);
 void nops(unsigned int num);
 
+int initSPI(){
+    // clear SPI registers
+    *(baseaddr_spi+0) = 0x00000000;
+    *(baseaddr_spi+1) = 0x00000000;
+    *(baseaddr_spi+2) = 0x00000000;
+    *(baseaddr_spi+3) = 0x00000000;
+    return 0;
+}
+
+void dumpStatusSPI(){
+    xil_printf("SPI reg0: 0x%08x\n\r", *(baseaddr_spi+0));
+    xil_printf("SPI reg1: 0x%08x\n\r", *(baseaddr_spi+1));
+    xil_printf("SPI reg2: 0x%08x\n\r", *(baseaddr_spi+2));
+    xil_printf("SPI reg3: 0x%08x\n\r", *(baseaddr_spi+3));
+}
+
+void setControlSPI(Xuint32 v){
+	*(baseaddr_spi+3) = v;
+}
+
+int writeSPI_blocking(unsigned int address, unsigned int data){
+	Xuint32 d, m;
+	int x, y, v;
+
+	x = (address & 0x0000007f) << 16;
+	y = ((0x0000FFFF) & data);
+	v = 0x80000000 | (x | y);
+    m = (Xuint32)v;
+    //xil_printf("== m  0x%08x \n\r",m);
+	*(baseaddr_spi+0) = m;
+	while(1){
+	  d = *(baseaddr_spi+1);
+	   //xil_printf("== read d  0x%08x \n\r",d);
+	  v = (unsigned int)d;
+	  if(v & 0x80000000){
+		break;
+	  }
+    }
+    *(baseaddr_spi+0) = 0x00000000;
+    return 0;
+}
+
+int writeSPI_non_blocking(unsigned int address, unsigned int data){
+	Xuint32 d, m;
+	int i, x, y, v;
+	int delay;
+
+	delay = 2000;
+	x = (address & 0x0000007f) << 16;
+	y = ((0x0000FFFF) & data);
+	v = 0x80000000 | (x | y);
+    m = (Xuint32)v;
+    //xil_printf("== m  0x%08x \n\r",m);
+	//*(baseaddr_spi+0) = m;
+    *(baseaddr_spi+0) = 0x80800F51; // debug - to be removed....
+    for(i = 0; i < 5; i++){
+    	nops(delay << i);
+	  d = *(baseaddr_spi+1);
+	   //xil_printf("== read d  0x%08x \n\r",d);
+	  v = (unsigned int)d;
+	  if(v & 0x80000000){
+		*(baseaddr_spi+0) = 0x00000000;
+		return 0;
+	  }
+    }
+    *(baseaddr_spi+0) = 0x00000000;
+    return 1;
+}
+
+int readSPI(unsigned int *data, unsigned int address){
+	Xuint32 d, m;
+	int i, x, v;
+
+	x = ((address & 0x0000007f) << 16) | 0x00800000;
+	v = 0x80000000 | x;
+	m = (Xuint32)v;
+	*(baseaddr_spi+0) = m;
+    for(i = 0; i < 5; i++){
+    	nops(2000 << i);
+	  d = *(baseaddr_spi+1);
+	  v = (unsigned int)d;
+	  if(v & 0x80000000){
+		*data = (0x7FFFFFFF & v);
+		*(baseaddr_spi+0) = 0x00000000;
+		return 0;
+	  }
+    }
+    return 1;
+}
+
 int main() {
+	int err;
     init_platform();
 
     xil_printf("== START version 8 ==\n\r");
@@ -48,11 +139,11 @@ int main() {
     xil_printf("slv_reg2: 0x%08x\n\r", *(baseaddr_p+2));
     xil_printf("slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
 
+
     // clear SPI registers
-    *(baseaddr_spi+0) = 0x00000000;
-    *(baseaddr_spi+1) = 0x00000000;
-    *(baseaddr_spi+2) = 0x00000000;
-    *(baseaddr_spi+3) = 0x00000000;
+    initSPI();
+
+    dumpStatusSPI();
 
     // set interrupt_0/1 of AXI PL interrupt generator to 0
     *(baseaddr_p+0) = 0x00000000;
@@ -61,10 +152,7 @@ int main() {
 
     xil_printf("Checkpoint 3\n\r");
     // read interrupt_0/1 of AXI PL interrupt generator
-    xil_printf("SPI slv_reg0: 0x%08x\n\r", *(baseaddr_spi+0));
-    xil_printf("SPI slv_reg1: 0x%08x\n\r", *(baseaddr_spi+1));
-    xil_printf("SPI slv_reg2: 0x%08x\n\r", *(baseaddr_spi+2));
-    xil_printf("SPI slv_reg3: 0x%08x\n\r", *(baseaddr_spi+3));
+
 /*
     xil_printf("Checkpoint 4\n\r");
     // setup and enable interrupts for IRQ_F2P[1:0]
@@ -94,7 +182,7 @@ int main() {
 
     xil_printf("Checkpoint 8\n\r");
     nops(10000);
-    // set interrupt_1 of AXI PL interrupt generator to 1
+    // set interrupt_1 of AXI PL interrupt generator to 1non
     // (isr1 wont be called since interrupts for IRQ_F2P[1:1] are disabled)
     *(baseaddr_p+1) = 0x00000000;
 
@@ -114,12 +202,16 @@ int main() {
 */
 
     xil_printf("== SPI test ==\n\r");
-    *(baseaddr_spi+3) = 0x00000003;		// clock division
-    *(baseaddr_spi+0) = 0x8000F853;		// write operation
-    xil_printf("After SPI reading 3 done: 0x%08x\n\r", *(baseaddr_spi+3));
+    setControlSPI(0x00000003);		// clock division
+
+    err = writeSPI_non_blocking(0x00000000, 0x0080F851);		// write operation
+    if(err == 0){
+    	xil_printf(" Write Success \n\r");
+    } else {
+    	xil_printf(" Write Fail \n\r");
+    }
+
     xil_printf("After SPI reading 0 done: 0x%08x\n\r", *(baseaddr_spi+0));
-nops(100000000);
-    *(baseaddr_spi+0) = 0x00000000;		// write operation - null
     xil_printf("After SPI reading 0 done: 0x%08x\n\r", *(baseaddr_spi+0));
 
     xil_printf("== STOP ==\n\r");

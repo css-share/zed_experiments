@@ -53,8 +53,8 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xlconcat_0_0/sim/design_1_xlconcat_0_0.v" \
   "../../../bd/design_1/sim/design_1.v" \
-  "../../../bd/design_1/ipshared/37fd/hdl/SPI_ip_v1_0_S00_AXI.v" \
-  "../../../bd/design_1/ipshared/37fd/hdl/SPI_ip_v1_0.v" \
+  "../../../bd/design_1/ipshared/c8e2/hdl/SPI_ip_v1_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/c8e2/hdl/SPI_ip_v1_0.v" \
   "../../../bd/design_1/ip/design_1_SPI_ip_0_1/sim/design_1_SPI_ip_0_1.v" \
 -endlib
 -makelib xcelium_lib/generic_baseblocks_v2_1_0 \

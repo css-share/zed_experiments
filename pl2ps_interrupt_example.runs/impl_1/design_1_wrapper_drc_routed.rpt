@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Jan 11 17:00:08 2019
+| Date         : Tue Jan 15 04:47:26 2019
 | Host         : AsusP8 running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -35,132 +35,132 @@ Table of Contents
 -----------------
 PDRC-153#1 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff1/CLK is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff1/FSM_onehot_state_reg[4]_i_2/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff1/FSM_onehot_state_reg[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff3/CLK is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff3/FSM_onehot_state_reg[4]_i_2/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/CLOCKDIV/ff3/FSM_onehot_state_reg[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[10]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[10]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[0]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[11]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[11]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[10]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[10]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[12]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[12]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[11]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[11]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[13]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[13]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[12]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[12]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[14]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[14]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[13]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[13]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[15]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[15]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[14]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[14]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[16]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[16]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[16]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#9 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[15]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[15]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[17]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[17]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[17]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#10 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[16]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[16]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[16]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[18]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[18]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[18]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#11 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[17]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[17]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[17]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[19]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[19]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[19]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#12 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[18]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[18]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[18]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[1]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[1]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#13 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[19]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[19]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[19]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[20]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[20]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[20]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#14 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[1]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[1]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[21]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[21]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[21]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#15 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[20]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[20]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[20]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[22]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[22]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[22]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#16 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[21]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[21]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[21]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[23]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[23]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[23]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#17 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[22]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[22]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[22]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[24]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[24]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[24]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#18 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[23]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[23]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[23]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[2]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[2]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#19 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[2]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[2]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#20 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[3]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[3]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#21 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[4]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[4]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_P_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_LDC_i_1__0/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[4]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#22 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[5]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[5]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[5]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[5]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#23 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[6]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[6]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[6]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[6]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#24 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[7]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[7]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[7]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[7]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#25 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[8]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[8]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[8]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[8]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#26 Warning
 Gated clock check  
-Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[9]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[9]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/SR25Bits/r_reg_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[9]_P is a gated clock net sourced by a combinational pin design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[9]_LDC_i_1/O, cell design_1_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/user_SPI_Block/FSM/r_reg_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Fri Jan 11 15:41:15 2019
+//Date        : Tue Jan 15 04:39:54 2019
 //Host        : AsusP8 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -33,6 +33,8 @@ module design_1
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     LED0,
+    LED1,
+    LED2,
     LED7,
     SPI_CS,
     SPI_MISO,
@@ -62,6 +64,8 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.LED0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.LED0, LAYERED_METADATA undef" *) output LED0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.LED1 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.LED1, LAYERED_METADATA undef" *) output LED1;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.LED2 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.LED2, LAYERED_METADATA undef" *) output LED2;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.LED7 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.LED7, LAYERED_METADATA undef" *) output LED7;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SPI_CS DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SPI_CS, LAYERED_METADATA undef" *) output SPI_CS;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SPI_MISO DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SPI_MISO, LAYERED_METADATA undef" *) input SPI_MISO;
@@ -71,6 +75,8 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SW7 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SW7, LAYERED_METADATA undef" *) input SW7;
 
   wire SPI_MISO_1;
+  wire SPI_ip_0_FSM_DONE;
+  wire SPI_ip_0_FSM_START;
   wire SPI_ip_0_SPI_CS;
   wire SPI_ip_0_SPI_MOSI;
   wire SPI_ip_0_SPI_SCK;
@@ -185,6 +191,8 @@ module design_1
   wire [2:0]xlconcat_0_dout;
 
   assign LED0 = axi4_pl_interrupt_ge_0_LED_0;
+  assign LED1 = SPI_ip_0_FSM_START;
+  assign LED2 = SPI_ip_0_FSM_DONE;
   assign LED7 = axi4_pl_interrupt_ge_0_LED_7;
   assign SPI_CS = SPI_ip_0_SPI_CS;
   assign SPI_MISO_1 = SPI_MISO;
@@ -192,7 +200,9 @@ module design_1
   assign SPI_SCK = SPI_ip_0_SPI_SCK;
   assign SW6_1 = SW6;
   design_1_SPI_ip_0_1 SPI_ip_0
-       (.SPI_CS(SPI_ip_0_SPI_CS),
+       (.FSM_DONE(SPI_ip_0_FSM_DONE),
+        .FSM_START(SPI_ip_0_FSM_START),
+        .SPI_CS(SPI_ip_0_SPI_CS),
         .SPI_MISO(SPI_MISO_1),
         .SPI_MOSI(SPI_ip_0_SPI_MOSI),
         .SPI_SCK(SPI_ip_0_SPI_SCK),

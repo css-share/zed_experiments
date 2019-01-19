@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Jan 11 17:00:11 2019
+| Date             : Tue Jan 15 04:47:28 2019
 | Host             : AsusP8 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -36,8 +36,8 @@ Table of Contents
 | Dynamic (W)              | 1.540        |
 | Device Static (W)        | 0.146        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.5         |
-| Junction Temperature (C) | 44.5         |
+| Max Ambient (C)          | 65.6         |
+| Junction Temperature (C) | 44.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.005 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     2113 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      644 |     53200 |            1.21 |
+| Clocks                  |     0.004 |        3 |       --- |             --- |
+| Slice Logic             |     0.002 |     2111 |       --- |             --- |
+|   LUT as Logic          |     0.001 |      641 |     53200 |            1.20 |
 |   Register              |    <0.001 |     1057 |    106400 |            0.99 |
 |   CARRY4                |    <0.001 |        6 |     13300 |            0.05 |
 |   F7/F8 Muxes           |    <0.001 |        1 |     53200 |           <0.01 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   Others                |     0.000 |      211 |       --- |             --- |
-| Signals                 |     0.003 |     1603 |       --- |             --- |
-| I/O                     |     0.002 |       10 |       200 |            5.00 |
+| Signals                 |     0.002 |     1602 |       --- |             --- |
+| I/O                     |     0.003 |       10 |       200 |            5.00 |
 | PS7                     |     1.529 |        1 |       --- |             --- |
 | Static Power            |     0.146 |          |           |                 |
 | Total                   |     1.686 |          |           |                 |
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.009 |      0.015 |
+| Vccint    |       1.000 |     0.023 |       0.008 |      0.015 |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -151,10 +151,10 @@ Table of Contents
 | Name                                                  | Power (W) |
 +-------------------------------------------------------+-----------+
 | design_1_wrapper                                      |     1.540 |
-|   design_1_i                                          |     1.538 |
-|     SPI_ip_0                                          |     0.002 |
-|       inst                                            |     0.002 |
-|         SPI_ip_v1_0_S00_AXI_inst                      |     0.002 |
+|   design_1_i                                          |     1.537 |
+|     SPI_ip_0                                          |     0.001 |
+|       inst                                            |     0.001 |
+|         SPI_ip_v1_0_S00_AXI_inst                      |     0.001 |
 |           user_SPI_Block                              |    <0.001 |
 |             CLOCKDIV                                  |    <0.001 |
 |               ff0                                     |    <0.001 |
@@ -183,10 +183,10 @@ Table of Contents
 |                 cmd_translator_0                      |    <0.001 |
 |                   incr_cmd_0                          |    <0.001 |
 |                   wrap_cmd_0                          |    <0.001 |
-|               RD.r_channel_0                          |     0.001 |
+|               RD.r_channel_0                          |    <0.001 |
 |                 rd_data_fifo_0                        |    <0.001 |
 |                 transaction_fifo_0                    |    <0.001 |
-|               SI_REG                                  |     0.002 |
+|               SI_REG                                  |     0.001 |
 |                 ar.ar_pipe                            |    <0.001 |
 |                 aw.aw_pipe                            |    <0.001 |
 |                 b.b_pipe                              |    <0.001 |
