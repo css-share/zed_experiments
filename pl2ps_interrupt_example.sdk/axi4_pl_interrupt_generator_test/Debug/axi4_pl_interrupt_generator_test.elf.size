@@ -1,2 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-  27936	   2728	  22600	  53264	   d010	axi4_pl_interrupt_generator_test.elf
+  28488	   2736	  22600	  53824	   d240	axi4_pl_interrupt_generator_test.elf

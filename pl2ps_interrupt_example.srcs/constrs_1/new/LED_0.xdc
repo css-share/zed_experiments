@@ -22,3 +22,18 @@ set_property PACKAGE_PIN P17 [get_ports SPI_MOSI]
 set_property IOSTANDARD LVCMOS18 [get_ports SPI_MOSI]
 set_property PACKAGE_PIN N22 [get_ports SPI_MISO]
 set_property IOSTANDARD LVCMOS18 [get_ports SPI_MISO]
+
+
+set_property PACKAGE_PIN M21 [get_ports MCK]
+set_property IOSTANDARD LVCMOS18 [get_ports MCK]
+
+set_property PACKAGE_PIN J18 [get_ports DBG0]
+set_property IOSTANDARD LVCMOS18 [get_ports DBG0]
+set_property PACKAGE_PIN L21 [get_ports DBG1]
+set_property IOSTANDARD LVCMOS18 [get_ports DBG1]
+set_property PACKAGE_PIN T16 [get_ports DBG2]
+set_property IOSTANDARD LVCMOS18 [get_ports DBG2]
+set_property PACKAGE_PIN J21 [get_ports DBG3]
+set_property IOSTANDARD LVCMOS18 [get_ports DBG3]
+set_property PACKAGE_PIN R20 [get_ports DBG4]
+set_property IOSTANDARD LVCMOS18 [get_ports DBG4]

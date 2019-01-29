@@ -160,10 +160,18 @@ proc create_root_design { parentCell } {
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
   # Create ports
+  set DBG0 [ create_bd_port -dir O -type data DBG0 ]
+  set DBG1 [ create_bd_port -dir O -type data DBG1 ]
+  set DBG2 [ create_bd_port -dir O -type data DBG2 ]
+  set DBG3 [ create_bd_port -dir O -type data DBG3 ]
+  set DBG4 [ create_bd_port -dir O -type data DBG4 ]
+  set HSIA0 [ create_bd_port -dir I -type data HSIA0 ]
+  set HSIA1 [ create_bd_port -dir I -type data HSIA1 ]
   set LED0 [ create_bd_port -dir O -type data LED0 ]
   set LED1 [ create_bd_port -dir O -type data LED1 ]
   set LED2 [ create_bd_port -dir O -type data LED2 ]
   set LED7 [ create_bd_port -dir O -type data LED7 ]
+  set MCK [ create_bd_port -dir O -type data MCK ]
   set SPI_CS [ create_bd_port -dir O -type data SPI_CS ]
   set SPI_MISO [ create_bd_port -dir I -type data SPI_MISO ]
   set SPI_MOSI [ create_bd_port -dir O -type data SPI_MOSI ]
@@ -176,6 +184,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi4_pl_interrupt_ge_0, and set properties
   set axi4_pl_interrupt_ge_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:axi4_pl_interrupt_generator:1.0 axi4_pl_interrupt_ge_0 ]
+
+  # Create instance: axi_gyro_hsi_0, and set properties
+  set axi_gyro_hsi_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:axi_gyro_hsi:1.0 axi_gyro_hsi_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -577,7 +588,7 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {2} \
+   CONFIG.NUM_MI {3} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
@@ -595,8 +606,11 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins axi4_pl_interrupt_ge_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins SPI_ip_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins axi_gyro_hsi_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
 
   # Create port connections
+  connect_bd_net -net HSIA0_1 [get_bd_ports HSIA0] [get_bd_pins axi_gyro_hsi_0/HSIA0]
+  connect_bd_net -net HSIA1_1 [get_bd_ports HSIA1] [get_bd_pins axi_gyro_hsi_0/HSIA1]
   connect_bd_net -net SPI_MISO_1 [get_bd_ports SPI_MISO] [get_bd_pins SPI_ip_0/SPI_MISO]
   connect_bd_net -net SPI_ip_0_FSM_DONE [get_bd_ports LED2] [get_bd_pins SPI_ip_0/FSM_DONE]
   connect_bd_net -net SPI_ip_0_FSM_START [get_bd_ports LED1] [get_bd_pins SPI_ip_0/FSM_START]
@@ -610,15 +624,22 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi4_pl_interrupt_ge_0_interrupt_0 [get_bd_pins axi4_pl_interrupt_ge_0/interrupt_0] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axi4_pl_interrupt_ge_0_interrupt_1 [get_bd_pins axi4_pl_interrupt_ge_0/interrupt_1] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net axi4_pl_interrupt_ge_0_interrupt_2 [get_bd_pins axi4_pl_interrupt_ge_0/interrupt_2] [get_bd_pins xlconcat_0/In2]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins SPI_ip_0/s00_axi_aclk] [get_bd_pins axi4_pl_interrupt_ge_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net axi_gyro_hsi_0_DBG0 [get_bd_ports DBG0] [get_bd_pins axi_gyro_hsi_0/DBG0]
+  connect_bd_net -net axi_gyro_hsi_0_DBG1 [get_bd_ports DBG1] [get_bd_pins axi_gyro_hsi_0/DBG1]
+  connect_bd_net -net axi_gyro_hsi_0_DBG2 [get_bd_ports DBG2] [get_bd_pins axi_gyro_hsi_0/DBG2]
+  connect_bd_net -net axi_gyro_hsi_0_DBG3 [get_bd_ports DBG3] [get_bd_pins axi_gyro_hsi_0/DBG3]
+  connect_bd_net -net axi_gyro_hsi_0_DBG4 [get_bd_ports DBG4] [get_bd_pins axi_gyro_hsi_0/DBG4]
+  connect_bd_net -net axi_gyro_hsi_0_MCK [get_bd_ports MCK] [get_bd_pins axi_gyro_hsi_0/MCK]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins SPI_ip_0/s00_axi_aclk] [get_bd_pins axi4_pl_interrupt_ge_0/s00_axi_aclk] [get_bd_pins axi_gyro_hsi_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins SPI_ip_0/s00_axi_aresetn] [get_bd_pins axi4_pl_interrupt_ge_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins SPI_ip_0/s00_axi_aresetn] [get_bd_pins axi4_pl_interrupt_ge_0/s00_axi_aresetn] [get_bd_pins axi_gyro_hsi_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SPI_ip_0/S00_AXI/S00_AXI_reg] SEG_SPI_ip_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi4_pl_interrupt_ge_0/S00_AXI/S00_AXI_reg] SEG_axi4_pl_interrupt_ge_0_S00_AXI_reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gyro_hsi_0/S00_AXI/S00_AXI_reg] SEG_axi_gyro_hsi_0_S00_AXI_reg
 
 
   # Restore current instance

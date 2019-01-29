@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Tue Jan 22 23:24:33 UTC 2019
+VLNV: xilinx.com:user:axi4_pl_SPI_ip:1.0
+SynthRuntime: 30

@@ -31,6 +31,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_repo_paths {
+  c:/Xilinx/Vivado/projects/ip_repo/axi_gyro_hsi_1.0
   c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0
   c:/Xilinx/Vivado/projects/ip_repo/axi4_pl_interrupt_generator_1.0
 } [current_project]

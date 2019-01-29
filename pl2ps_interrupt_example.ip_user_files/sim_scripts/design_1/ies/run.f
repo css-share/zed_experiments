@@ -53,8 +53,8 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xlconcat_0_0/sim/design_1_xlconcat_0_0.v" \
   "../../../bd/design_1/sim/design_1.v" \
-  "../../../bd/design_1/ipshared/c8e2/hdl/SPI_ip_v1_0_S00_AXI.v" \
-  "../../../bd/design_1/ipshared/c8e2/hdl/SPI_ip_v1_0.v" \
+  "../../../bd/design_1/ipshared/e62d/hdl/SPI_ip_v1_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/e62d/hdl/SPI_ip_v1_0.v" \
   "../../../bd/design_1/ip/design_1_SPI_ip_0_1/sim/design_1_SPI_ip_0_1.v" \
 -endlib
 -makelib ies_lib/generic_baseblocks_v2_1_0 \
@@ -80,6 +80,14 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+  "../../../bd/design_1/ipshared/9366/src/Packetizer.v" \
+  "../../../bd/design_1/ipshared/9366/src/StreamPipeline.v" \
+  "../../../bd/design_1/ipshared/9366/src/Tokenizer.v" \
+  "../../../bd/design_1/ipshared/9366/src/gyro_basics.v" \
+  "../../../bd/design_1/ipshared/9366/src/StreamGenerator.v" \
+  "../../../bd/design_1/ipshared/9366/src/axi_gyro_hsi_v1_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/9366/hdl/axi_gyro_hsi_v1_0.v" \
+  "../../../bd/design_1/ip/design_1_axi_gyro_hsi_0_0/sim/design_1_axi_gyro_hsi_0_0.v" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_17 \
   "../../../../pl2ps_interrupt_example.srcs/sources_1/bd/design_1/ipshared/ccfb/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

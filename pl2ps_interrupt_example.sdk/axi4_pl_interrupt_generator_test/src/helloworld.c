@@ -15,6 +15,7 @@ static XScuGic intc;
 // address of AXI PL interrupt generator
 Xuint32* baseaddr_p = (Xuint32*) XPAR_AXI4_PL_INTERRUPT_GE_0_S00_AXI_BASEADDR;
 Xuint32* baseaddr_spi = (Xuint32*) 0x43C10000;
+Xuint32* baseaddr_gyro_channel = (Xuint32*) 0x43C20000;
 
 int flag;
 int setup_interrupt_system();
@@ -33,6 +34,16 @@ int initSPI(){
     return 0;
 }
 
+int initGyroChannelStreaming(){
+    // clear SPI registers
+    *(baseaddr_gyro_channel+0) = 0x00000000;
+    *(baseaddr_gyro_channel+1) = 0x00000000;
+    *(baseaddr_gyro_channel+2) = 0x00000000;
+    *(baseaddr_gyro_channel+3) = 0x00000000;
+    return 0;
+}
+
+// -------------------------------------------------------------------
 void dumpStatusSPI(){
     xil_printf("SPI reg0: 0x%08x\n\r", *(baseaddr_spi+0));
     xil_printf("SPI reg1: 0x%08x\n\r", *(baseaddr_spi+1));
@@ -40,8 +51,25 @@ void dumpStatusSPI(){
     xil_printf("SPI reg3: 0x%08x\n\r", *(baseaddr_spi+3));
 }
 
+// -------------------------------------------------------------------
 void setControlSPI(Xuint32 v){
 	*(baseaddr_spi+3) = v;
+}
+
+// -------------------------------------------------------------------
+ void setSPIClockDivision(unsigned int v){
+	 int w;
+   Xuint32 x;
+
+   x = (Xuint32)(v & 0x00000007);
+   *(baseaddr_spi+3) = x;
+}
+
+ // -------------------------------------------------------------------
+  int readSPIClockDivision(){
+     Xuint32 x;
+     x = *(baseaddr_spi+3);
+     return (((int)x) & 0x00000007);
 }
 
 int writeSPI_blocking(unsigned int address, unsigned int data){
@@ -52,21 +80,53 @@ int writeSPI_blocking(unsigned int address, unsigned int data){
 	y = ((0x0000FFFF) & data);
 	v = 0x80000000 | (x | y);
     m = (Xuint32)v;
-    //xil_printf("== m  0x%08x \n\r",m);
+    xil_printf("== m  0x%08x \n\r",m);
 	*(baseaddr_spi+0) = m;
 	while(1){
 	  d = *(baseaddr_spi+1);
-	   //xil_printf("== read d  0x%08x \n\r",d);
+	  xil_printf("== read d  0x%08x \n\r",d);
+
 	  v = (unsigned int)d;
 	  if(v & 0x80000000){
 		break;
 	  }
+
     }
     *(baseaddr_spi+0) = 0x00000000;
     return 0;
 }
+// -------------------------------------------------------------------
+ int writeSPI_non_blocking(unsigned int address, unsigned int data){
+    Xuint32 d, m;
+    int i, x, y, v;
+    int clk_div, delay;
 
-int writeSPI_non_blocking(unsigned int address, unsigned int data){
+    clk_div = readSPIClockDivision(); // binary representation
+    delay = 16000;
+
+    x = (address & 0x0000007f) << 16;
+    y = ((0x0000FFFF) & data);
+    v = 0x80000000 | (x | y);
+    m = (Xuint32)v;
+
+   *(baseaddr_spi+0) = m;
+   //*(baseaddr_spi+0) = 0x80800F57; // debug only...
+
+   for(i = 0; i <= clk_div; i++){
+     nops(delay << i);
+     d = *(baseaddr_spi+1);
+     v = (unsigned int)d;
+     if(v & 0x80000000){
+       *(baseaddr_spi+0) = 0x00000000;
+       return 0;
+     }
+   }
+   *(baseaddr_spi+0) = 0x00000000;
+   return 1;
+ }
+
+ // -------------------------------------------------------------------
+int writeSPI_non_blocking_orig(unsigned int address, unsigned int data){
 	Xuint32 d, m;
 	int i, x, y, v;
 	int delay;
@@ -77,8 +137,8 @@ int writeSPI_non_blocking(unsigned int address, unsigned int data){
 	v = 0x80000000 | (x | y);
     m = (Xuint32)v;
     //xil_printf("== m  0x%08x \n\r",m);
-	//*(baseaddr_spi+0) = m;
-    *(baseaddr_spi+0) = 0x80800F51; // debug - to be removed....
+	*(baseaddr_spi+0) = m;
+    //*(baseaddr_spi+0) = 0x80800F51; // debug only....
     for(i = 0; i < 5; i++){
     	nops(delay << i);
 	  d = *(baseaddr_spi+1);
@@ -93,32 +153,46 @@ int writeSPI_non_blocking(unsigned int address, unsigned int data){
     return 1;
 }
 
+// -------------------------------------------------------------------
 int readSPI(unsigned int *data, unsigned int address){
-	Xuint32 d, m;
-	int i, x, v;
+  Xuint32 d, m;
+  int i, x, v, r;
+  int res, delay, clk_div;
 
-	x = ((address & 0x0000007f) << 16) | 0x00800000;
-	v = 0x80000000 | x;
-	m = (Xuint32)v;
-	*(baseaddr_spi+0) = m;
-    for(i = 0; i < 5; i++){
-    	nops(2000 << i);
-	  d = *(baseaddr_spi+1);
-	  v = (unsigned int)d;
-	  if(v & 0x80000000){
-		*data = (0x7FFFFFFF & v);
-		*(baseaddr_spi+0) = 0x00000000;
-		return 0;
-	  }
+  clk_div = readSPIClockDivision(); // binary representation
+  delay = 16000;
+
+  res = 1;
+  *data = 0x00000000;           // clears result
+  x = ((address & 0x0000007F) << 16) | 0x00008043;	// DEBUG: the 8F51 is a test pattern
+  v = (0x80000000 | x);         // set the start bit
+  m = (Xuint32)v;
+  *(baseaddr_spi+0) = m;
+  for(i = 0; i < clk_div; i++){
+    nops(delay << i);
+    d = *(baseaddr_spi+1);
+    r = (unsigned int)d;
+    if(r & 0x80000000){
+      *data = (0x0000FFFF & r); // only lower 16 bits matter
+      res = 0;
+      break;
     }
-    return 1;
+  }
+  v = (0x7FFFFFFF & x);
+  m = (Xuint32)v;
+  *(baseaddr_spi+0) = m;        // clear start
+  return res;
 }
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
 int main() {
 	int err;
     init_platform();
+    int readVal, writeVal;
 
-    xil_printf("== START version 8 ==\n\r");
+    xil_printf("== START version 9 ==\n\r");
     // set interrupt_0/1 of AXI PL interrupt generator to 0
 
     *(baseaddr_p+0) = 0x00000000;
@@ -200,19 +274,35 @@ int main() {
     }
     xil_printf("After Busy-Wait Loop slv_reg3: 0x%08x\n\r", *(baseaddr_p+3));
 */
-
+/*
     xil_printf("== SPI test ==\n\r");
-    setControlSPI(0x00000003);		// clock division
+    setControlSPI(0x00000007);		// clock division
 
-    err = writeSPI_non_blocking(0x00000000, 0x0080F851);		// write operation
+    writeVal = 0x00808A51;
+    xil_printf(" SPI writing : 0x%08x\n\r", writeVal);
+    err = writeSPI_non_blocking(0x00000000, writeVal);		// write operation
     if(err == 0){
     	xil_printf(" Write Success \n\r");
     } else {
     	xil_printf(" Write Fail \n\r");
     }
 
+    err = readSPI(&readVal, 0x00000000);
+    xil_printf(" SPI reading : 0x%08x\n\r", readVal);
     xil_printf("After SPI reading 0 done: 0x%08x\n\r", *(baseaddr_spi+0));
     xil_printf("After SPI reading 0 done: 0x%08x\n\r", *(baseaddr_spi+0));
+
+    */
+    xil_printf("== GYRO Channel test ==\n\r");
+
+
+    *(baseaddr_gyro_channel+3) = 0x03000000;
+    *(baseaddr_gyro_channel+2) = 0x80000000;
+
+     nops(100000);
+
+    *(baseaddr_gyro_channel+2) = 0x00000000;
+
 
     xil_printf("== STOP ==\n\r");
 
